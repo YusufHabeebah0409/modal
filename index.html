@@ -7,9 +7,11 @@
 </head>
 <body>
     <h1>Product Cart </h1>
-    <input type="text" placeholder="Input Product " id="Product">
-    <button onc>Add Product</button>
-    <div id="show"></div>
+    <p id="errorMsg" style="display: none;"> Error, Input a product</p>
+    <input type="text" placeholder="Input Product " id="product" autofocus>
+    <button onclick="addItem()">Add Product</button>
+    <table id="show"></table>
+    <button onclick="delAllItem()" style="display: none;" id="delAll">Delete All Product</button>
 
     
     
