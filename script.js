@@ -44,11 +44,17 @@ const display = () => {
     show.innerHTML = ""
     cart.map((item, index) => {
         show.innerHTML += `
-        <tr>
-            <td>${index + 1}. ${item}</td>
-            <td> <button onclick='editItem(${JSON.stringify(item)}, ${index})'>Edit</button> </td>
-            <td> <button onclick="delItem(${index})">Delete</button> </td>
-        </tr>
+    <tr>
+         <td class="table-light fs-3 text-center">${index + 1}.</td>
+         <td class="table-light fs-3 text-center"> ${item}</td>
+         <td class="table-light"> 
+            <button onclick='editItem(${JSON.stringify(item)}, ${index})'class=" btn btn-info text-center w-50 ">
+            <img src="./icons8-create-24.png" alt="edit" >
+            </button> </td>
+         <td class="table-light"> 
+            <button onclick="delItem(${index})"class=" btn btn-danger text-center w-50 "> 
+            <img src="./icons8-delete-30.png" alt="delete" width="25px"></button> </td>
+    </tr>
       `
     })
 
