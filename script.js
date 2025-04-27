@@ -58,9 +58,9 @@ const display = () => {
       `
     })
 
-    if(cart.length >= 2){
+    if (cart.length >= 2) {
         delAll.style.display = "block"
-    }else{
+    } else {
         delAll.style.display = "none"
     }
 }
