@@ -17,8 +17,7 @@
 <body>
     <div class="container my-5 border  border-warning rounded  shadow-lg py-3 px-5">
         <h1 class="text-center fs-3 p-2 text-warning">Product Cart </h1>
-        <p id="errorMsg" style="display: none;"
-            class="text-center alert alert-danger animate__animated animate__pulse animate__infinite fs-3"> Error, Input
+        <p id="errorMsg" style="display: none;" class="text-center alert alert-danger animate__animated animate__pulse animate__infinite fs-3"> Error, Input
             a product</p>
         <input type="text" placeholder="Input Product " id="product" autofocus class="w-100 form text-center fs-5 p-2">
         <br><br>
@@ -29,6 +28,28 @@
                 <img src="./icons8-delete-30.png" alt="" width="40px">
             </button>
         </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Product</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+          <input type="text" id="updateProduct" class="w-100 form text-center fs-5 p-2" placeholder="Edit Product">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="updateEdit()" data-bs-dismiss="modal" >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
