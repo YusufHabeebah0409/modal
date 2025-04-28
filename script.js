@@ -1,5 +1,10 @@
 cart = []
 editItemNum = ""
+
+
+if (localStorage.getItem('product')) {
+    cart = JSON.parse(localStorage.getItem('product'));
+}
 const addItem = () => {
 
     if (product.value.trim() === "") {
@@ -18,6 +23,7 @@ const delItem = (figure) => {
     var delConfirm = confirm("Are You Sure you want to delete , This action is not reversible")
     if (delConfirm === true) {
         cart.splice(figure, 1)
+        localStorage.setItem('product', JSON.stringify(cart))
         display()
     } else {
         display()
@@ -31,6 +37,7 @@ const editItem = (data, num) => {
 
 const updateEdit = () => {
         cart.splice(editItemNum, 1, updateProduct.value)
+        localStorage.setItem('product', JSON.stringify(cart))
         updateProduct.value = ""
         display()
 
@@ -40,7 +47,8 @@ const delAllItem = () => {
 
     var delAllConfirm = confirm("Are You Sure you want to delete all product , This action is not reversible")
     if (delAllConfirm === true) {
-        cart.splice(editItemNum, cart.length)
+        cart = []
+        localStorage.setItem('product', JSON.stringify(cart))
         display()
     } else {
         display()
@@ -71,6 +79,7 @@ const display = () => {
     } else {
         delAll.style.display = "none"
     }
-
-    JSON.parse(localStorage.getItem('product'))
 }
+
+
+display()
