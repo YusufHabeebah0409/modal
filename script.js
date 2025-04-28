@@ -8,6 +8,7 @@ const addItem = () => {
     } else {
         errorMsg.style.display = "none"
         cart.push(product.value)
+        localStorage.setItem('product',JSON.stringify(cart))
         product.value = ""
         display()
     }
@@ -70,4 +71,6 @@ const display = () => {
     } else {
         delAll.style.display = "none"
     }
+
+    JSON.parse(localStorage.getItem('product'))
 }
